@@ -7,10 +7,10 @@ function createRecipeHTML(recipeTitle, containsTitleImage, titleImageFileName, r
                         +'\n        <title> ' + recipeTitle + ' - League Level 0</title>'
                         +'\n        <meta charset="UTF-8">'
                         +'\n        <meta name="viewport" content="width=device-width, initial-scale=1">'
-                        +'\n        <link rel="stylesheet" href="https://league-central.github.io/curriculum/style/style.css">'
+                        +'\n        <link rel="stylesheet" href="/style/style.css">'
                         +'\n        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">'
                         +'\n        <link rel="icon" type="image/png" href="https://league-central.github.io/curriculum/img/favicon.png">'
-                        +'\n        <script src="https://league-central.github.io/curriculum/script/headerAndFooter.js"></script>'
+                        +'\n        <script src="/script/headerAndFooter.js"></script>'
                         +'\n    </head>';
     
     
