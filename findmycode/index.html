@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        h1 {
+            font-size: 80px;
+        }
+        h2 {
+            font-size: 36px;
+        }
+        input[type='radio'] {
+            width: 30px;
+            height: 30px;
+            border-radius: 30px;
+            top: 0px;
+            left: -1px;
+            position: relative;
+            background-color: #d1d3d1;
+            content: '';
+            display: inline-block;
+            visibility: visible;
+            border: 2px solid white;
+        }
+
+        input[type='radio']:checked {
+            width: 30px;
+            height: 30px;
+            border-radius: 30px;
+            top: 0px;
+            left: -1px;
+            position: relative;
+            background-color: #ffa500;
+            content: '';
+            display: inline-block;
+            visibility: visible;
+            border: 2px solid white;
+        }
+
+        label { 
+            font-size: 36px; 
+        }
+        button {
+            background-color: #ffa500; /* Green */
+            border: none;
+            color: black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 36px;
+        }
+
+        button:hover {
+            background-color: #ffcc33; /* Green */
+            border: none;
+            color: gray;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 36px;
+        }
+
+        input[type='text'] {
+            width: 300px;
+            height: 40px;
+            font-size: 36px;
+        }
+    </style>
+
+    <h1>
+        <center>
+            <img src="/img/league.jpg" width="139" height="114">
+            FIND MY CODE
+        </center>
+    </h1>
+    <hr>
+    <div style="font-size: 36px;">
+        Enter Your Github Username:<input type="text" id="inputID"></input><br>
+    </div>
+    <h2>Select Your Level:</h2>
+    <input type="radio" id="l0" name="level" value="0">
+    <label for="l0">0</label><br>
+    <input type="radio" id="l1" name="level" value="1">
+    <label for="l1">1</label><br>  
+    <input type="radio" id="l2" name="level" value="2">
+    <label for="l2">2</label><br>
+    <input type="radio" id="l3" name="level" value="3">
+    <label for="l3">3</label><br>
+    <input type="radio" id="l4" name="level" value="4">
+    <label for="l4">4</label><br>
+    <input type="radio" id="l5" name="level" value="5">
+    <label for="l5">5</label><br>
+    <input type="radio" id="l6" name="level" value="6">
+    <label for="l6">6</label><br>
+    <input type="radio" id="l7" name="level" value="7">
+    <label for="l7">7</label><br>
+    <input type="radio" id="l8" name="level" value="8">
+    <label for="l8">8</label><br>
+    <input type="radio" id="all" name="level" value="all">
+    <label for="all">Search All Repositories</label><br>
+    <button onclick="submit()">Find My Code!</button>
+
+    <script>
+        window.onload = function(){
+            document.body.style.backgroundColor = "#eeeeee";
+            window.addEventListener('keydown', function(evt){
+                if(evt.key == "Enter"){
+                    submit();
+                }
+            });
+        }
+        function submit(){
+            let userName = document.getElementById("inputID").value;
+            if(userName.length > 0){
+                let levels = document.getElementsByName("level");
+                if(levels[levels.length - 1].checked){
+                    let url = "https://github.com/search?q=" + userName + "&type=Repositories";
+                    window.location.href = url;
+                }else{
+                    for(let i = 0; i < levels.length - 1; i++){
+                        if(levels[i].checked){
+                            let url = "https://github.com/league-level" + i + "-student?q=" + userName;
+                            window.location.href = url;
+                            break;
+                        }
+                    }    
+                }
+                
+            }
+        }
+    </script>
+
+</html>
